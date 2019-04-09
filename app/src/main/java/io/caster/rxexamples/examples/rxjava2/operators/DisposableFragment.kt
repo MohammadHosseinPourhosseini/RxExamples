@@ -35,27 +35,27 @@ class DisposableFragment : Fragment() {
                     Timber.d("onNext: $item")
                 })
 
-        disposableObserver = Observable.just(5, 6, 7, 8)
-                .subscribeWith(object: DisposableObserver<Int>() {
-                    override fun onError(e: Throwable?) {
-                        Timber.e(e, e?.message)
-                    }
-
-                    override fun onComplete() {
-                        Timber.i("onComplete disposable observer")
-                    }
-
-                    override fun onNext(item: Int?) {
-                        content.text = "${content.text}\n$item"
-                        Timber.d("onNext: $item ")
-                    }
-                })
+//        disposableObserver = Observable.just(5, 6, 7, 8)
+//                .subscribeWith(object: DisposableObserver<Int>() {
+//                    override fun onError(e: Throwable?) {
+//                        Timber.e(e, e?.message)
+//                    }
+//
+//                    override fun onComplete() {
+//                        Timber.i("onComplete disposable observer")
+//                    }
+//
+//                    override fun onNext(item: Int?) {
+//                        content.text = "${content.text}\n$item"
+//                        Timber.d("onNext: $item ")
+//                    }
+//                })
     }
 
     override fun onPause() {
         super.onPause()
         disposable.dispose()
-        disposableObserver.dispose()
+//        disposableObserver.dispose()
 
         Timber.d("Disposed")
     }
