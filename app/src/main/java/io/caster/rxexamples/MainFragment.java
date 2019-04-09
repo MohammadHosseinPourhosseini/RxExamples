@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.caster.rxexamples.examples.AsyncTaskFragment;
 import io.caster.rxexamples.examples.rxjava1.operators.AmbFragment;
 import io.caster.rxexamples.examples.rxjava1.subjects.AsyncSubjectFragment;
 import io.caster.rxexamples.examples.rxjava1.subjects.BehaviorSubjectFragment;
@@ -57,6 +58,11 @@ public class MainFragment extends Fragment {
     @OnClick(R.id.intro_fragment)
     public void onIntroFragmentClick() {
         changeFragment(IntroFragment.newInstance());
+    }
+
+    @OnClick(R.id.async_fragment)
+    public void onAsyncTaskFragmentClick() {
+        changeFragment(AsyncTaskFragment.newInstance());
     }
 
     @OnClick(R.id.zip_fragment)
